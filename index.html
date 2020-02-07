@@ -30,11 +30,9 @@
         .then(loadRandomImage)
         .then(whoCares => {
             document.onkeydown = function(e) {
-                e = e || window.event
-                if(e.keyCode == '39') {
-                    loadRandomImage()
+                switch(e.key) {
+                    case "ArrowRight":loadRandomImage();
                 }
-
             }
         })
 
