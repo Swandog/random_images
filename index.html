@@ -5,8 +5,7 @@
         
     <script>
         console.log("start")
-        var url = 'http://127.0.0.1:8080/'
-        const request = new Request(url + 'image_list.txt')
+        const request = new Request('image_list.txt')
 
         var myImage = document.querySelector('img')
         var imageFiles=[]
@@ -14,7 +13,7 @@
         function loadRandomImage( ) {
             var index = Math.floor(Math.random() * imageFiles.length)
 
-            var newImage=url + imageFiles[index]
+            var newImage=imageFiles[index]
             console.log(index + ' ' + newImage)
 
             myImage.src = newImage
