@@ -24,7 +24,7 @@
         .catch(reason => {console.log("oh no");})
         .then(response => response.text())
         .then(contents => {
-            imageFiles=String(contents).split(/\s+/)
+            imageFiles=String(contents).split(/\s+/).filter(name => name.length > 0)
             console.log(imageFiles)
         })
         .then(loadRandomImage)
