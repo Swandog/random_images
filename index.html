@@ -1,13 +1,21 @@
-<body>
+<html>
+    <body>
+        <img>    
+    </body>
+        
     <script>
         console.log("start")
         const request = new Request('http://127.0.0.1:8080/image_list.txt')
 
+        var myImage = document.querySelector('img')
+        
         fetch(request)
         .catch(reason => {console.log("oh no");})
-        .then(function(response) {return response.text();})
-        .then(text => {
-            console.log(text);
+        .then(response => response.text())
+        .then(contents => {
+            var imageFiles=String(contents).split(/\s+/)
+
+            myImage.src = 'http://127.0.0.1:8080/'+imageFiles[0]
         })
     </script>
-</body>
+</html>
